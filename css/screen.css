@@ -192,8 +192,12 @@ ul.posts span {
 }
 
 p.quote {
-    margin-bottom: 6em;
-    color: #222
+    margin-bottom: 4em;
+    margin-top: 6em;
+    color: #222;
+    padding: 2em;
+    border: 2px solid black;
+    border-radius: 25px;
 }
 
 table.project-table {
