@@ -34,24 +34,24 @@ body {
 }
 
 body {
-    background-color: #ffe6a1
+    background-color: #faf6d7
 }
 
 body.home {
-    background-color: #7dc2ad
+    background-color: #faf6d7
 }
 
 body.research {
     /* background-color: #90ecfc  */
-    background-color: #c3fcb3
+    background-color: #faf6d7
 }
 
 body.cv {
-    background-color: #f3d8f8
+    background-color: #faf6d7
 }
 
 body.writing {
-    background-color: #ffe6a1
+    background-color: #faf6d7
 }
 
 h3.rule span {
