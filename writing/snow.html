@@ -1,52 +1,136 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="author" content="Alec Flowers" />
-<title>Snow</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="Alec Flowers" />
+    <title>Snow</title>
 
-<link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
 
-<link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+    <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
 
-<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
 
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <style>
+        #snowflakes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
 
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body class>
-<div class="side">
-<canvas id="canvas_left" width="0"></canvas>
-</div>
-<div class="middle">
-<div class="nav">
-<div class="nav1">
-    <a href="/" class="flower_logo"> &#127800;  </a>
-    <a href="/" >alec flowers</a>
-</div>
-<div class="nav2">
-<ul>
-<li><a href="/research/">research</a></li>
-<li><a href="/blog/">writing</a></li>
-<li><a href="/cv/">cv</a></li>
-</ul>
-</div>
-</div>
-<div id="post">
-<p class="meta">10 Dec 2021</p>
-<h1>Snow</h1>
-<p>A soft blanket of snow covers the ground gently muting everyday noises. The rustling of animals, the crunch of rubber tires smooshing ice into the pavement, the crackle of branches waving sorrowfully in the wind. All fading to nothing as if the world were on mute. It's days like today where you can almost hear the souls stretching and murmuring under their gravestones.</p>
+    <div class="side">
+        <canvas id="canvas_left" width="0"></canvas>
+    </div>
+    <div class="middle">
+        <div class="nav">
+            <div class="nav1">
+                <a href="/">alec flowers</a>
+            </div>
+            <div class="nav2">
+                <ul>
+                    <li><a href="/research/">research</a></li>
+                    <li><a href="/blog/">writing</a></li>
+                    <li><a href="/cv/">cv</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="post">
+            <p class="meta">10 Dec 2021</p>
+            <h1>Snow</h1>
+            <p>A soft blanket of snow covers the ground gently muting everyday noises. The rustling of animals, the
+                crunch of rubber tires smooshing ice into the pavement, the crackle of branches waving sorrowfully in
+                the wind. All fading to nothing as if the world were on mute. It's days like today where you can almost
+                hear the souls stretching and murmuring under their gravestones.</p>
 
-<p>My tracks recede behind me, the only ones this silent morning. I stand still, hands folded deep into my jacket pockets, unwilling to move and break the spell. The untouched snow lays lightly draped over her grave, the rough stone peeking out like the squinty eyes of a swaddled baby.</p>
+            <p>My tracks recede behind me, the only ones this silent morning. I stand still, hands folded deep into my
+                jacket pockets, unwilling to move and break the spell. The untouched snow lays lightly draped over her
+                grave, the rough stone peeking out like the squinty eyes of a swaddled baby.</p>
 
-<p>I am reminded of the simple joy of watching the snow glide and tumble through the air. Bobbing and weaving in an eternal dance. We, sitting together, snug in our blankets on the porch. Ruddy red noses poking out, frosty breath lingering in front of our faces. She would wriggle a freezing toe through my blanket with a mischievous grin until she found a patch of warm bare skin. The cold jolt would make me squirm and giggle. But before I could catch her she would be out of the chair, bright and joyous, plunging into the snow, arms outstretched. She would dance, turning and sweeping, spiraling, laughing, all the while collecting glittering gems in her hair and eyelashes.</p>
+            <p>I am reminded of the simple joy of watching the snow glide and tumble through the air. Bobbing and
+                weaving in an eternal dance. We, sitting together, snug in our blankets on the porch. Ruddy red noses
+                poking out, frosty breath lingering in front of our faces. She would wriggle a freezing toe through my
+                blanket with a mischievous grin until she found a patch of warm bare skin. The cold jolt would make me
+                squirm and giggle. But before I could catch her she would be out of the chair, bright and joyous,
+                plunging into the snow, arms outstretched. She would dance, turning and sweeping, spiraling, laughing,
+                all the while collecting glittering gems in her hair and eyelashes.</p>
 
-<p>This was how I remembered her, glowing with life and forever dancing.</p>
+            <p>This was how I remembered her, glowing with life and forever dancing.</p>
 
-<p>I kept my silent vigil as snow began to fall. Tears streaming down my cheeks. As I felt the sweet kiss of snowflakes on my face I began to turn and sway, whirling faster and faster.</p>
+            <p>I kept my silent vigil as snow began to fall. Tears streaming down my cheeks. As I felt the sweet kiss of
+                snowflakes on my face I began to turn and sway, whirling faster and faster.</p>
 
-<p>We danced together that night. Me, frantically, trying to keep up and her, elusive, always one step ahead.</p>
+            <p>We danced together that night. Me, frantically, trying to keep up and her, elusive, always one step
+                ahead.</p>
+
+
+        </div>
+    </div>
+    <div id="snowflakes"></div>
+
+
+    <div id="div2" class="snowflakes" aria-hidden="true">
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+        ❅
+        </div>
+        <div class="snowflake">
+        ❆
+        </div>
+        <div class="snowflake">
+        ❅
+        </div>
+        <div class="snowflake">
+        ❆
+        </div>
+        <div class="snowflake">
+          ❅
+        </div>
+        <div class="snowflake">
+          ❆
+        </div>
+        <div class="snowflake">
+          ❅
+        </div>
+        <div class="snowflake">
+          ❆
+        </div>
+        <div class="snowflake">
+          ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+
+    </div>
+
 
 </body>
+<!-- <p class="footer">&#127800;</p> -->
+
 </html>

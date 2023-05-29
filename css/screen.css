@@ -4,14 +4,15 @@
 }
 
 ::selection {
-    background: rgba(255,255,0,.5)
+    background: rgba(255, 255, 0, .5)
 }
 
 ::-moz-selection {
-    background: rgba(255,255,0,.5)
+    background: rgba(255, 255, 0, .5)
 }
 
-html,body {
+html,
+body {
     min-height: 100vh;
     position: relative
 }
@@ -27,10 +28,10 @@ body:after {
 
 body {
     font-size: 13.34px;
-    font-family: open sans,sans-serif;
+    font-family: open sans, sans-serif;
     *font-size: small;
     display: grid;
-    grid-template-columns: minmax(12.5%,1fr) minmax(12.5%,39em) minmax(12.5%,1fr)
+    grid-template-columns: minmax(12.5%, 1fr) minmax(12.5%, 39em) minmax(12.5%, 1fr)
 }
 
 body {
@@ -62,7 +63,12 @@ h3.rule.home span {
     background: #7dc2ad
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-size: 120%;
     text-align: left
 }
@@ -71,6 +77,7 @@ h1 {
     font-size: 180%;
     margin-bottom: 1em
 }
+
 h2 {
     font-size: 120%;
     margin: 1em 0
@@ -135,7 +142,7 @@ img.logo {
 
 @media screen and (min-width: 48em) {
     #home {
-        font-size:12pt
+        font-size: 12pt
     }
 }
 
@@ -190,7 +197,7 @@ ul.posts li {
 
 ul.posts span {
     color: #777;
-    font-family: Monaco,courier new,monospace;
+    font-family: Monaco, courier new, monospace;
     font-size: 80%;
     flex-shrink: 0
 }
@@ -229,7 +236,7 @@ img.pub-cover {
 
 div.pub-cite {
     display: none;
-    background-color: rgba(255,255,255,.2);
+    background-color: rgba(255, 255, 255, .2);
     border-style: dashed;
     border-width: 1px
 }
@@ -244,7 +251,7 @@ div.pub-cite {
 
 @media screen and (min-width: 60em) {
     .side canvas {
-        display:block
+        display: block
     }
 }
 
@@ -256,7 +263,7 @@ div.pub-cite {
 }
 
 .nav {
-    font-family: Monaco,courier new,monospace;
+    font-family: Monaco, courier new, monospace;
     color: #06f;
     font-weight: 700;
     margin-bottom: 3em;
@@ -282,13 +289,13 @@ div.pub-cite {
 }
 
 .nav1 a {
-    color: #188a6b;
+    color: #4e6e91;
     float: left;
     display: flex;
 }
 
 .nav1 a:hover {
-    color: #50d7b3
+    color: #188a6b
 }
 
 .nav1 a.active {
@@ -297,7 +304,7 @@ div.pub-cite {
 
 @media screen and (min-width: 48em) {
     .nav2 li {
-        display:inline;
+        display: inline;
         margin-left: 1em
     }
 }
@@ -312,7 +319,8 @@ div.pub-cite {
     padding: 0 .4em
 }
 
-#post ul,#post ol {
+#post ul,
+#post ol {
     margin-left: 1.35em
 }
 
@@ -350,17 +358,205 @@ div.pub-cite {
 }
 
 mjx-container {
-    min-width: 100%!important;
+    min-width: 100% !important;
     overflow-x: auto;
     overflow-y: hidden
 }
 
-.flower_logo{
-    font-size: 20px;
-    display: flex;
-    margin-right: 0.5em;
+.flower_logo {
+    font-size: 17px;
+    /* margin-right: 0.5em;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%); */
 }
 
 .tab {
     margin-left: 40px;
+}
+
+.footer {
+    left: 49%;
+    position: absolute;
+    top: 50%;
+    margin-top: 6em;
+    /* transform: translate(-50%, -50%); */
+
+}
+
+.snowflake {
+    color: #f8f8f8;
+    font-size: 1.3em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 2px #383737;
+}
+
+
+@-webkit-keyframes snowflakes-fall {
+    0% {
+        top: -10%
+    }
+
+    100% {
+        top: 100%
+    }
+}
+
+@-webkit-keyframes snowflakes-shake {
+
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+
+    50% {
+        -webkit-transform: translateX(80px);
+        transform: translateX(180px)
+    }
+}
+
+@keyframes snowflakes-fall {
+    0% {
+        top: -10%
+    }
+
+    100% {
+        top: 100%
+    }
+}
+
+@keyframes snowflakes-shake {
+
+    0%,
+    100% {
+        transform: translateX(0)
+    }
+
+    50% {
+        transform: translateX(180px)
+    }
+}
+
+.snowflake {
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+    -webkit-animation-duration: 15s, 1s;
+    -webkit-animation-timing-function: linear, ease-in-out;
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-play-state: running, running;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 15s, 5s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running
+}
+
+.snowflake:nth-of-type(0) {
+    left: 1%;
+    -webkit-animation-delay: 30s, 0s;
+    animation-delay: 30s, 0s
+}
+
+.snowflake:nth-of-type(1) {
+    left: 10%;
+    -webkit-animation-delay: 5s, 0s;
+    animation-delay: 19s, 1s
+}
+
+.snowflake:nth-of-type(2) {
+    left: 10%;
+    -webkit-animation-delay: 6.5s, .5s;
+    animation-delay: 19.5s, .5s
+}
+
+.snowflake:nth-of-type(3) {
+    left: 30%;
+    -webkit-animation-delay: 4s, 2s;
+    animation-delay: 30s, 2s
+}
+
+.snowflake:nth-of-type(4) {
+    left: 40%;
+    -webkit-animation-delay: 2s, 2s;
+    animation-delay: 32s, 2s
+}
+
+.snowflake:nth-of-type(5) {
+    left: 50%;
+    -webkit-animation-delay: 8s, 3s;
+    animation-delay: 38s, 3s
+}
+
+.snowflake:nth-of-type(6) {
+    left: 60%;
+    -webkit-animation-delay: 6s, 2s;
+    animation-delay: 36s, 2s
+}
+
+.snowflake:nth-of-type(7) {
+    left: 70%;
+    -webkit-animation-delay: 2.5s, 1s;
+    animation-delay: 32.5s, 1s
+}
+
+.snowflake:nth-of-type(8) {
+    left: 80%;
+    -webkit-animation-delay: 31s, 0s;
+    animation-delay: 31s, 0s
+}
+
+.snowflake:nth-of-type(9) {
+    left: 90%;
+    -webkit-animation-delay: 3s, 1.5s;
+    animation-delay: 33s, 1.5s
+}
+
+.snowflake:nth-of-type(10) {
+    left: 5%;
+    -webkit-animation-delay: 2s, 0s;
+    animation-delay: 32s, 0s
+}
+
+.snowflake:nth-of-type(11) {
+    left: 65%;
+    -webkit-animation-delay: 4s, 2.5s;
+    animation-delay: 34s, 2.5s
+}
+
+.snowflake:nth-of-type(12) {
+    left: 70%;
+    -webkit-animation-delay: 2.5s, 1s;
+    animation-delay: 32.5s, 1s
+}
+
+.snowflake:nth-of-type(13) {
+    left: 80%;
+    -webkit-animation-delay: 31s, 0s;
+    animation-delay: 31s, 0s
+}
+
+.snowflake:nth-of-type(14) {
+    left: 90%;
+    -webkit-animation-delay: 3s, 1.5s;
+    animation-delay: 48s, 1.5s
+}
+
+.snowflake:nth-of-type(15) {
+    left: 5%;
+    -webkit-animation-delay: 2s, 0s;
+    animation-delay: 40s, 0s
+}
+
+.snowflake:nth-of-type(16) {
+    left: 30%;
+    -webkit-animation-delay: 4s, 2.5s;
+    animation-delay: 45s, 2.5s
 }
